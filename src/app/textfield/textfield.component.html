@@ -1,0 +1,35 @@
+<form class="input-form">
+  <h1>{{ title }}</h1>
+
+  <mat-form-field class="input-form-field" appearance="fill">
+    <mat-label>Leave some words here</mat-label>
+    <textarea
+      matInput
+      #message
+      [attr.maxlength]="wordCount"
+      placeholder="write your words here"
+    ></textarea>
+    <mat-hint align="end"
+      >{{ message.value.length }} / {{ wordCount }}</mat-hint
+    >
+  </mat-form-field>
+  <div class="button-container">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onCopy(message.value, $event)"
+    >
+      Copy
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onDelete(message, $event)"
+    >
+      Delete
+    </button>
+  </div>
+  <mat-card *ngIf="message.value.length === wordCount" class="alert-note"
+    >You're all out of words baby xxx</mat-card
+  >
+</form>
