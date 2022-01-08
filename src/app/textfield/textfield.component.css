@@ -16,6 +16,7 @@ h1 {
 .alert-note {
   /* margin: 1em 0; */
   background-color: #e99ad9;
+  margin-top: 1em;
 }
 
 .button-container {
