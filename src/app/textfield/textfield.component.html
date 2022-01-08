@@ -18,6 +18,7 @@
       mat-raised-button
       color="primary"
       (click)="onCopy(message.value, $event)"
+      [disabled]="message.value.length === 0"
     >
       Copy
     </button>
@@ -25,6 +26,7 @@
       mat-raised-button
       color="primary"
       (click)="onDelete(message, $event)"
+      [disabled]="message.value.length === 0"
     >
       Delete
     </button>
